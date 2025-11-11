@@ -70,3 +70,54 @@ where ta.data_nascimento like "2005-03-12"
 ![](image-11.png)
 
 13 - 
+select sigla_turma
+from tb_turmas tt 
+where tt.id_sala_fk = 6
+![](image-12.png)
+
+14 - 
+select tc.id_curso, tc.nome_curso 
+from tb_cursos tc 
+where tc.carga_horaria > 800
+![](image-13.png)
+
+15 - 
+select td.nome 
+from tb_docentes td 
+where td.especialidade <> "enfermagem"
+![](image-14.png)
+
+16 - 
+select ta.id_aluno, ta.nome 
+from tb_alunos ta inner join tb_aluno_turma tat 
+on ta.id_aluno = tat.id_aluno_fk 
+where tat.id_turma_fk = 17
+![](image-15.png)
+
+17 - 
+select tc.nome_curso 
+from tb_cursos tc 
+where tc.id_curso = 10
+![](image-16.png)
+
+18 - 
+select nome
+from tb_docentes td inner join tb_docente_curso tdc 
+where tdc.id_curso_fk = 19
+![](image-17.png)
+
+19 - 
+select tt.sigla_turma , tt.turno 
+from tb_turmas tt 
+where tt.id_sala_fk  = 11
+![](image-18.png)
+
+20 - 
+SELECT tc.sigla, tc.nome_curso 
+from tb_cursos tc inner join tb_turmas tm 
+on tc.id_curso = tm.id_curso_fk 
+where id_turma BETWEEN 56 and 60
+ ![](image-19.png)
+
+ 21 - 
+ 
