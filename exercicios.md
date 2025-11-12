@@ -120,4 +120,45 @@ where id_turma BETWEEN 56 and 60
  ![](image-19.png)
 
  21 - 
- 
+ select distinct nome_sala 
+from tb_turmas 
+inner join tb_salas on id_sala = id_sala_fk 
+where turno = "manha"
+![](image-20.png)
+
+22 - 
+select td.id_docente, td.nome 
+from tb_docentes td inner join tb_docente_curso tdc 
+on td.id_docente = tdc.id_docente_fk 
+where tdc.id_curso_fk = 5
+![](image-21.png)
+
+23 - 
+select nome
+from tb_alunos ta 
+inner join tb_aluno_turma tat 
+on ta.id_aluno = tat.id_aluno_fk 
+inner join tb_turmas tt 
+on tt.id_turma = tat.id_turma_fk 
+where tt.sigla_turma = "sgt04"
+![](image-22.png)
+
+24 - 
+select nome_curso
+from tb_cursos tc 
+inner join tb_turmas tt 
+on tc.id_curso = tt.id_curso_fk 
+inner join tb_salas ts 
+on ts.id_sala = tt.id_sala_fk 
+where ts.nome_sala = "laboratório de hardware"
+![](image-23.png)
+
+25 - 
+select id_aluno_turma, id_aluno_fk
+from tb_aluno_turma tat 
+inner join tb_turmas tt 
+on tat.id_turma_fk = tt.id_turma 
+where tt.sigla_turma = "adm08"
+![](image-24.png)
+
+26 - 
