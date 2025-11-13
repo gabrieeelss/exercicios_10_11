@@ -162,3 +162,99 @@ where tt.sigla_turma = "adm08"
 ![](image-24.png)
 
 26 - 
+select nome, sigla_turma
+from tb_alunos ta 
+inner join tb_aluno_turma tat 
+on ta.id_aluno = tat.id_aluno_fk 
+inner join tb_turmas tt 
+on tt.id_turma = tat.id_turma_fk 
+where tt.sigla_turma = "ti25"
+![](image-25.png)
+
+27 - 
+select nome, nome_curso
+from tb_docentes td 
+inner join tb_docente_curso tdc 
+on td.id_docente = tdc.id_docente_fk 
+inner join tb_cursos tc 
+on tc.id_curso = tdc.id_curso_fk 
+where td.id_docente = 3
+![](image-26.png)
+
+28 - 
+select sigla_turma, nome_sala
+from tb_cursos tc 
+inner join tb_turmas tt 
+on tc.id_curso = tt.id_curso_fk 
+inner join tb_salas ts 
+on ts.id_sala = tt.id_sala_fk 
+where ts.capacidade = 40 and tc.nome_curso = "administração"
+![](image-31.png)
+
+29 - 
+select nome
+from tb_alunos ta 
+inner join tb_aluno_turma tat 
+on ta.id_aluno = tat.id_aluno_fk 
+inner join tb_turmas tt 
+on tt.id_turma = tat.id_turma_fk 
+where tt.sigla_turma = "ti26" or tt.sigla_turma = "ti30"
+![](image-28.png)
+
+30 - 
+select nome_sala
+from tb_salas ts 
+inner join tb_turmas tt 
+on ts.id_sala = tt.id_sala_fk 
+where ts.tipo = "laboratorio" and ts.capacidade <35
+![](image-29.png)
+
+31 - 
+select nome_curso 
+from tb_cursos tc 
+inner join tb_docente_curso tdc 
+on tc.id_curso = tdc.id_curso_fk 
+inner join tb_docentes td 
+on td.id_docente = tdc.id_docente_fk 
+where td.nome = "diana prince"
+![](image-30.png)
+
+32 - 
+select sigla_turma, nome_curso
+from tb_turmas tt 
+inner join tb_cursos tc 
+on tt.id_curso_fk = tc.id_curso 
+inner join tb_salas ts 
+on ts.id_sala = tt.id_sala_fk 
+where ts.nome_sala = "Laboratório de Enfermagem"
+![](image-32.png)
+
+33 - 
+select nome
+from tb_alunos ta 
+inner join tb_aluno_turma tat 
+on ta.id_aluno = tat.id_aluno_fk 
+inner join tb_turmas tt 
+on tt.id_turma = tat.id_turma_fk 
+where tt.sigla_turma = "ti29"
+![](image-33.png)
+
+34 - 
+select nome, sigla
+from tb_docentes td 
+inner join tb_docente_curso tdc 
+on td.id_docente = tdc.id_docente_fk 
+inner join tb_cursos tc 
+on tc.id_curso = tdc.id_curso_fk 
+where tdc.id_docente_fk = 5
+![alt text](image-35.png)
+
+35 - 
+select sigla_turma, nome_curso
+from tb_turmas tt 
+inner join tb_cursos tc 
+on tt.id_curso_fk = tc.id_curso 
+where tc.sigla = "ti" or tc.sigla = "tii"
+![](image-34.png)
+
+36 - 
