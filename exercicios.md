@@ -247,7 +247,7 @@ on td.id_docente = tdc.id_docente_fk
 inner join tb_cursos tc 
 on tc.id_curso = tdc.id_curso_fk 
 where tdc.id_docente_fk = 5
-![alt text](image-35.png)
+![](image-35.png)
 
 35 - 
 select sigla_turma, nome_curso
@@ -258,3 +258,85 @@ where tc.sigla = "ti" or tc.sigla = "tii"
 ![](image-34.png)
 
 36 - 
+select nome_curso
+from tb_cursos tc 
+where not tc.id_curso = 1
+![](image-36.png)
+
+37 - 
+select nome_sala, sigla_turma
+from tb_turmas tt 
+inner join tb_salas ts 
+on ts.id_sala = tt.id_sala_fk 
+where tt.turno = 'noite' and ts.tipo = 'teorica'
+![](image-37.png)
+
+38 - 
+select nome, id_turma_fk
+from tb_aluno_turma tat 
+inner join tb_alunos ta 
+on ta.id_aluno = tat.id_aluno_fk 
+where tat.id_aluno_fk = 40
+![](image-38.png)
+
+39 - 
+select sigla_turma, nome_curso
+from tb_turmas tt 
+inner join tb_cursos tc 
+on tc.id_curso = tt.id_curso_fk 
+where tc.carga_horaria = 800
+![](image-39.png)
+
+40 - 
+select nome, especialidade
+from tb_docentes td 
+where td.id_docente = 11
+![](image-40.png)
+
+41 - 
+select sigla_turma, nome_curso
+from tb_turmas tt 
+inner join tb_cursos tc 
+on tc.id_curso = tt.id_curso_fk 
+where tt.turno = 'manha'
+![](image-41.png)
+
+42 - 
+select nome_sala, numero_sala
+from tb_salas ts 
+where ts.capacidade <> 40
+![](image-42.png)
+
+43 - 
+select nome, id_aluno
+from tb_alunos ta 
+inner join tb_aluno_turma tat 
+on ta.id_aluno = tat.id_aluno_fk 
+inner join tb_turmas tt 
+on tt.id_turma = tat.id_turma_fk
+where tt.id_sala_fk = 7
+![](image-43.png)
+
+44 - 
+select nome_curso, carga_horaria
+from tb_cursos tc 
+where tc.carga_horaria > 1000
+![](image-44.png)
+
+45 - 
+select sigla_turma, turno
+from tb_turmas tt 
+where tt.id_curso_fk = 8 and tt.id_sala_fk = 11
+![](image-45.png)
+
+46 - 
+select nome
+from tb_docentes td 
+where td.especialidade = 'Administração'
+![](image-46.png)
+
+47 - 
+select id_aluno, nome, data_nascimento
+from tb_alunos ta 
+where ta.id_aluno > 230
+![](image-47.png)
